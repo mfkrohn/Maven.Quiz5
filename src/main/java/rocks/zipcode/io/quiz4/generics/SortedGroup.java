@@ -1,18 +1,29 @@
 package rocks.zipcode.io.quiz4.generics;
 
+import java.util.Comparator;
+
 /**
  * @author leon on 18/12/2018.
  */
-public class SortedGroup<_> extends Group<_> {
-    @Override
-    public void insert(_ value) {
+public class SortedGroup<SomeType extends Comparable> extends Group<SomeType> {
+    public SortedGroup() {
+        super();
     }
 
     @Override
-    public void delete(_ value) {
+    public void insert(SomeType value) {
+        super.insert(value);
+        group.sort(Comparator.naturalOrder());
     }
 
-    public Integer indexOf(_ value) {
-        return null;
+    @Override
+    public void delete(SomeType value) {
+        super.delete(value);
+        group.sort(Comparator.naturalOrder());
+    }
+
+    public Integer indexOf(SomeType value) {
+        group.sort(Comparator.naturalOrder());
+        return group.indexOf(value);
     }
 }
