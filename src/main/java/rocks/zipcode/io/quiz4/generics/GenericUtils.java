@@ -14,7 +14,6 @@ import com.google.common.collect.Sets;
 public class GenericUtils {
     public static <SomeType extends Comparable> Iterable<? extends Iterable<SomeType>> powerSet(Set<SomeType> originalSet) {
         Set<Set<SomeType>> powerSet = Sets.powerSet(originalSet);
-        List<SomeType> permList = new ArrayList<SomeType>(Collections.powerSet);
 
 
         return powerSet;

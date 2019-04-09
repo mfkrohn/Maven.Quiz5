@@ -19,12 +19,9 @@ public class  ComparableTreeSet<T extends Comparable> extends TreeSet<T> impleme
     }
 
     public int compareTo(ComparableTreeSet<T> o) {
-        if(this.size()!=o.size()){
-
             return this.first().compareTo(o.first());
 
-        }else
-            return this.size()-o.size();
+
     }
 
 
